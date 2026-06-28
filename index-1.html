@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dzaky ❤️ Yiyi</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#fffaf5;color:#6b4b4b;scroll-behavior:smooth;overflow-x:hidden}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(#fff,#ffeef3);animation:f 1.5s}
+@keyframes f{from{opacity:0;transform:scale(.95)}to{opacity:1}}
+h1{font-size:3em}.card{max-width:900px;margin:30px auto;padding:20px;background:#fff;border-radius:20px;box-shadow:0 6px 20px #0001}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.gallery img{width:100%;border-radius:15px}
+button{padding:12px 20px;border:none;border-radius:30px;background:pink}
+.fall{position:fixed;top:-20px;animation:fall linear infinite;color:#ff7aa2}
+@keyframes fall{to{transform:translateY(110vh)}}
+footer{text-align:center;padding:30px}
+</style></head><body>
+<div class="hero"><h1>Dzaky ❤️ Yiyi</h1><p>22 Maret 2026</p><button onclick="document.getElementById('main').scrollIntoView()">Mulai</button></div>
+<div id="main" class="card"><h2>💖 Waktu Bersama</h2><p id="days"></p><p id="count"></p></div>
+<div class="card"><h2>Galeri</h2><div class="gallery"><img src="foto1.jpg" alt="Foto 1"><img src="foto2.jpg" alt="Foto 2"><img src="foto3.jpg" alt="Foto 3"><img src="foto4.jpg" alt="Foto 4"><img src="foto5.jpg" alt="Foto 5"></div></div>
+<div class="card"><h2>Surat Cinta</h2><p>Yiyi, terima kasih sudah hadir di hidupku. Setiap hari bersamamu adalah hadiah yang ingin selalu kujaga. Semoga langkah kita selalu searah, penuh tawa, doa, dan cinta. Aku sayang kamu, hari ini, besok, dan seterusnya. ❤️</p></div>
+<div class="card"><button onclick="alert('Aku juga sayang kamu ❤️')">Aku Sayang Kamu ❤️</button></div>
+<div class="card"><audio id="m" controls><source src="music.mp3" type="audio/mpeg"></audio><p>Ganti file <b>music.mp3</b> dengan lagu romantis Indonesia milikmu.</p></div>
+<footer>Selamanya, Dzaky untuk Yiyi.</footer>
+<script>
+const start=new Date("2026-03-22T00:00:00");
+function upd(){let n=new Date(),d=Math.floor((n-start)/86400000);days.textContent="Hari sejak jadian: "+d;
+let diff=n-start;let dd=Math.floor(diff/86400000),hh=Math.floor(diff/3600000)%24,mm=Math.floor(diff/60000)%60,ss=Math.floor(diff/1000)%60;
+count.textContent=`${dd} hari ${hh} jam ${mm} menit ${ss} detik`;}
+setInterval(upd,1000);upd();
+setInterval(()=>{let e=document.createElement("div");e.className="fall";e.style.left=Math.random()*100+"vw";e.style.animationDuration=3+Math.random()*5+"s";e.textContent=Math.random()>.5?"❤":"🌸";document.body.appendChild(e);setTimeout(()=>e.remove(),8000)},300);
+</script></body></html>
